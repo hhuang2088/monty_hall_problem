@@ -19,6 +19,10 @@ def monty_hall
   puts door_arr[host_pick]
   puts "Would you like to change your mind?"
   choice = gets.chomp
+  while choice != "yes" && choice != "no"
+    puts "That is not a valid response"
+    choice = gets.chomp
+  end
   if choice == "yes"
     door_arr.delete_at(host_pick)
     door_arr.delete_at(response.to_i - 1)
